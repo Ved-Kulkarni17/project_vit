@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  threatsight-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: threatsight-api
+    env_file:
+      - .env.dev  # Change to .env.stage or .env.prod when needed
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app/app

@@ -7,4 +7,4 @@ app.include_router(routes.router)
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to ThreatSight API"}
+    return {"message": "Welcome to ThreatSight API - Your data is safe."}
