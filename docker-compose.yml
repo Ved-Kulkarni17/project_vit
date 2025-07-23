@@ -7,8 +7,9 @@ services:
       dockerfile: Dockerfile
     container_name: threatsight-api
     env_file:
-      - .env.dev  # Change to .env.stage or .env.prod when needed
+      - .env.dev  
     ports:
       - "8000:8000"
     volumes:
       - ./app:/app/app
+      - ./model:/model/model
