@@ -11,6 +11,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy app code
 COPY ./app ./app
 
+COPY ./model ./model
+
 # Copy environment config (default: .env.dev)
 COPY .env.dev .env
 

@@ -4,7 +4,7 @@ import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "model")))
 
-from model import ThreatModel  # No __init__.py needed
+from model import ThreatModel  
 
 router = APIRouter()
 model = ThreatModel()
