@@ -22,7 +22,6 @@ with open('conn.csv', mode='r', encoding='utf-8') as file:
         r.hset(key, mapping=row)
         print(f"Stored {key}: {row}")
         
-for key in r.scan_iter("conn:*"):
-    print(key, r.hgetall(key))
+
 
 
