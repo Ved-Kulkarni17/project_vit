@@ -1,6 +1,6 @@
 app/__pycache__
 # 2. __pycache__ directory is created by Python to store compiled Python files
 /myenv
-.env.dev
+/.env.dev
 .env.prod
 .env.stage
