@@ -1,7 +1,7 @@
 import csv
 
 input_file = "conn.log"
-output_file = "conn.csv"
+output_file = "model/conn.csv"
 fields = []
 
 with open(input_file, "r") as infile, open(output_file, "w", newline='') as outfile:

@@ -4,3 +4,4 @@ python-dotenv
 redis
 pandas
 scikit-learn
+pyod
