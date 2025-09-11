@@ -3,6 +3,7 @@ import numpy as np
 from sklearn.preprocessing import LabelEncoder
 from pyod.models.iforest import IForest
 from sklearn.metrics import accuracy_score
+from sklearn.preprocessing import StandardScaler
 
 df = pd.read_csv('conn.csv')  
 
@@ -18,9 +19,10 @@ for col in ['id.orig_h', 'id.orig_p', 'id.resp_h', 'proto', 'conn_state']:
 
 df.to_csv('conn_encoded.csv', index=False)
 
-X = df.values
+scaler = StandardScaler()
+X = scaler.fit_transform(df.values)
 
-clf = IForest()
+clf = IForest(contamination=0.01)
 clf.fit(X)
 
 df['anomaly'] = clf.labels_
