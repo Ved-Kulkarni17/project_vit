@@ -1,18 +1,10 @@
-<<<<<<< Updated upstream
-class ThreatModel:
-    def __init__(self):
-        print("[Model] ThreatModel initialized.")
-
-    def predict(self, data):
-        return {"prediction": "threat", "input": data}
-=======
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
 from pyod.models.iforest import IForest
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import precision_score, recall_score, f1_score
-
+from sklearn.preprocessing import StandardScaler
 
 df = pd.read_csv('conn.csv')  
 
@@ -33,7 +25,7 @@ for col in ['id.orig_h', 'id.orig_p', 'id.resp_h', 'proto', 'conn_state']:
 
 df.to_csv('conn_encoded.csv', index=False)
 
-from sklearn.preprocessing import StandardScaler
+
 
 scaler = StandardScaler()
 X = scaler.fit_transform(df.values)
@@ -60,4 +52,4 @@ accuracy = accuracy_score(df['label'], df['anomaly'])
 print("Accuracy:", accuracy)
 
 
->>>>>>> Stashed changes
+
